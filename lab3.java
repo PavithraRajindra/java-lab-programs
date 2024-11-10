@@ -17,7 +17,7 @@ class Employee{
         System.out.println("----------------------------PAY SLIP----------------------------");
         System.out.println("Employee ID: "+emp_id);
         System.out.println("Employee name: "+emp_name);
-        System.out.println("Profession: Associate Professor");
+        System.out.println("Profession: "+this.getClass().getSimpleName());
         System.out.println("Basic Pay: "+basicPay);
         System.out.println("Gross Salary: "+grossSal);
         System.out.println("Net Salary: "+netSal);
@@ -42,7 +42,6 @@ class Programmer extends Employee{
         double grossSal = basicPay + da + hra;
         double netSal = grossSal - pf - scf;
         super.display(basicPay, grossSal, netSal);
-        inp.close();
     }
 }
 
@@ -63,7 +62,6 @@ class AssistantProfessor extends Employee{
         double grossSal = basicPay + da + hra;
         double netSal = grossSal - pf - scf;
         super.display(basicPay, grossSal, netSal);
-        inp.close();
     }
 }
 
@@ -84,7 +82,6 @@ class AssociateProfessor extends Employee{
         double grossSal = basicPay + da + hra;
         double netSal = grossSal - pf - scf;
         super.display(basicPay, grossSal, netSal);
-        inp.close();
     }
 }
 
@@ -105,7 +102,6 @@ class Professor extends Employee{
         double grossSal = basicPay + da + hra;
         double netSal = grossSal - pf - scf;
         super.display(basicPay, grossSal, netSal);
-        inp.close();
     }
 
 }
@@ -115,12 +111,15 @@ public class lab3{
         Scanner inp = new Scanner(System.in);
         Scanner inps = new Scanner(System.in);
         do{
-            System.out.print("1. Programmer\n2. Assistant Professor\n3. Associate Professor\n4. Professor\n5. Exit\nChoose profession:");
+            System.out.print("1. Programmer\n2. Assistant Professor\n3. Associate Professor\n4. Professor\n5. Exit\nChoose profession: ");
             int choice = inp.nextInt();
             
             if(choice==5){
-                System.out.println("Exiting...");
+                System.out.println("Exiting...\n");
                 break;
+            }
+            else if(choice>5||choice<1){
+                System.out.println("Invalid choice\n");
             }
             else{
                 System.out.print("Enter name: ");
