@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class lab7c{
+public class lab7b{
     public static void checkVotingAge(int age) throws Exception{
         if(age<18){
             throw new Exception("You are not eligible to vote.");
